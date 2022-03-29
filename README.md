@@ -1,2 +1,10 @@
-# redes-trabajo1-rest
-🌐 Trabajo 1 de Redes y Comunicación. Web Service REST
+## 🌐 Redes y Comunicación de Datos
+### Trabajo 1-1: API REST
+
+<br>
+
+### Requerimientos
++ Para el servidor:
+  + Express
++ Para el ciente:
+  + Flask
