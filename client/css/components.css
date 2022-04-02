@@ -1,0 +1,28 @@
+.side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 0px 368px; */
+}
+
+
+.description {
+    color: var(--black);
+}
+
+.description-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+}
+
+.description-info-element {
+    padding: 10px;
+}
+
+
+.methods {
+    background-color: var(--accent);
+    color: var(--white);
+}
