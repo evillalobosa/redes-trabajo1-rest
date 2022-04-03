@@ -8,6 +8,7 @@
 
 .description {
     color: var(--black);
+    background-color: var(--white);
 }
 
 .description-info {
@@ -23,6 +24,10 @@
 
 
 .methods {
-    background-color: var(--accent);
     color: var(--white);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
 }
