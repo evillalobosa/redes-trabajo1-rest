@@ -40,22 +40,31 @@
 
     <!-- METHODS SECTION -->
     <div class="side methods">
-        <div class="method-1">
+        <div class="method">
             <!-- TODO: add special character to "digito" -->
-            <div class="methods-title">Validador digito verificador</div>
-            <div class="methods-description">
+            <div class="method-title">Validador digito verificador</div>
+            <div class="method-description">
                 Este metodo consiste en recibir la parte entera del RUT y su digito verificador<br>
                 por separado para mostrar si este último fue ingresado correctamente o no
             </div>
-            <div>FILEDS</div>
+            <div class="method-fields">
+                <div class="method-field" >
+                    <input type="text" class="field-rut" placeholder="RUT">
+                    <input type="text" class="field-rutdv" placeholder="digito validador">
+                </div>
+                <button type="button">Enter</button>
+            </div>
         </div>
-        <div class="method-2">
-            <div class="methods-title">Dividir nombre</div>
-            <div class="methods-description">
+        <div class="method">
+            <div class="method-title">Dividir nombre</div>
+            <div class="method-description">
                 Este método consiste en recibir un nombre completo (nombres + apellidos) para<br>
                 mostrar estos valores en una estructura jerárquica
             </div>
-            <div>FIELDS</div>
+            <div class="method-fields">
+                <input type="text" class="method-field" placeholder="Nombre completo">
+                <button type="button">Enter</button>
+            </div>
         </div>
     </div>
 </body>

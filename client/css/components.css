@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0px 368px;
+    padding: 0px 30vw;
 }
 
 .icon {
@@ -78,5 +78,48 @@
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    padding: 0px;
+    padding: 20px 10px;
+}
+
+.method {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.method-title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.method-description {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 30px 0px;
+}
+
+.method-fields {
+    display: flex;
+    justify-content: space-between;
+}
+
+.method-field {
+    margin-right: 35px;
+}
+
+.field-rut {
+    width: 130px;
+}
+.field-rutdv {
+    width: 80px;
+}
+.field-nombre {
+    width: 200px;
 }
