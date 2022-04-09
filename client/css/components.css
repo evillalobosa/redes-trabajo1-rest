@@ -10,6 +10,14 @@
     margin-right: 5px;
 }
 
+.hide {
+    display: none !important;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
 
 .description {
     color: var(--black);
@@ -43,10 +51,6 @@
 }
 
 .description-text {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
     line-height: 24px;
 }
 
@@ -60,11 +64,7 @@
 }
 
 .description-info-element {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 16px;
+    font-weight: bold;
     padding: 10px;
     display: flex;
     flex-direction: row;
@@ -97,11 +97,6 @@
 }
 
 .method-description {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 16px;
     margin: 30px 0px;
 }
 
@@ -122,4 +117,48 @@
 }
 .field-nombre {
     width: 200px;
+}
+
+
+.result-good {
+    background-color: var(--correct);
+}
+.result-bad {
+    background-color: var(--error);
+}
+
+.method-result {
+    margin-top: 30px;
+}
+
+.result-horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.result-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.result-nombre-title {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.result-nombre {
+    display: flex;
+    flex-direction: row;
+}
+
+.result-nombre-element {
+    padding: 5px;
 }

@@ -52,7 +52,19 @@
                     <input type="text" class="field-rut" placeholder="RUT">
                     <input type="text" class="field-rutdv" placeholder="digito validador">
                 </div>
-                <button type="button">Enter</button>
+                <button type="button" class="font-bold">Enter</button>
+            </div>
+            <div class="method-result">
+                <div class="result-horizontal result-good font-bold">
+                    <!-- TODO arreglar la palabra digito -->
+                    <img class="icon" src="assets/correct.png" alt="correct icon">
+                    Digito validador correcto
+                </div>
+                <div class="result-horizontal result-bad font-bold">
+                    <!-- TODO arreglar la palabra digito -->
+                    <img class="icon" src="assets/error.png" alt="error icon">
+                    Digito validador incorrecto
+                </div>
             </div>
         </div>
         <div class="method">
@@ -63,7 +75,31 @@
             </div>
             <div class="method-fields">
                 <input type="text" class="method-field" placeholder="Nombre completo">
-                <button type="button">Enter</button>
+                <button type="button" class="font-bold">Enter</button>
+            </div>
+            <div class="method-result">
+                <div class="result-vertical result-good">
+                    <div class="result-nombre-title">
+                        <img class="icon" src="assets/correct.png" alt="correct icon">
+                        Estructura nombre ingresado
+                    </div>
+                    <div class="result-nombre">
+                        <div class="result-nombre-element">
+                            Nombres <br>
+                            + nombre1 <br>
+                            + nombre2
+                        </div>
+                        <div class="result-nombre-element">
+                            Apellidos <br>
+                            + apellido1 <br>
+                            + apellido2
+                        </div>
+                    </div>
+                </div>
+                <div class="result-horizontal result-bad font-bold">
+                    <img class="icon" src="assets/error.png" alt="error icon">
+                    Nombre incompleto o mal ingresado
+                </div>
             </div>
         </div>
     </div>
