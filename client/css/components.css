@@ -34,7 +34,7 @@
 }
 
 .description-title-main {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
@@ -42,7 +42,7 @@
 }
 
 .description-title-sub {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
@@ -89,7 +89,7 @@
 }
 
 .method-title {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
@@ -160,5 +160,5 @@
 }
 
 .result-nombre-element {
-    padding: 5px;
+    margin: 5px 25px;
 }
