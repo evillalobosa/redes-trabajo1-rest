@@ -7,6 +7,7 @@
 
     <title>API REST</title>
 
+    <link rel="icon" type="image/png" href="assets/favicon.ico"/>
     <link rel="stylesheet" href="css/index.css">
     <script defer src="js/index.js"></script>
 </head>
@@ -22,7 +23,7 @@
                 <!-- TODO: fix words -->
                 <li>Este trabajo 1 consta de dos partes</li>
                 <li>Esta parte consiste en levantar un servidor con el cual se puedan hacer peticiones tipo REST aplicando los dos metodos descritos abajo.</li>
-                <li>El aplicativo cliente hecho simplemente con JS hace peticiones hacia el servidor hecho con Spring</li>
+                <li>El aplicativo cliente hecho simplemente con JS hace peticiones hacia el servidor hecho con Spring Boot</li>
             </ul>
         </div>
         <div class="description-info">
@@ -51,16 +52,16 @@
             <div class="method-fields">
                 <div class="method-field" >
                     <input type="text" id="rutField" class="field-rut" placeholder="RUT">
-                    <input type="text" id="rutdField" class="field-rutdv" placeholder="digito validador">
+                    <input type="text" id="rutdField" class="field-rutdv" placeholder="Validador">
                 </div>
                 <button type="button" class="font-bold" onclick="getRut()">Enter</button>
             </div>
             <div class="method-result">
-                <div class="result-horizontal result-good font-bold">
+                <div id="rut-correct" class="result-horizontal result-good font-bold hide">
                     <img class="icon" src="assets/correct.png" alt="correct icon">
                     D&iacutegito validador correcto
                 </div>
-                <div class="result-horizontal result-bad font-bold">
+                <div id="rut-error" class="result-horizontal result-bad font-bold hide">
                     <img class="icon" src="assets/error.png" alt="error icon">
                     D&iacutegito validador incorrecto
                 </div>
@@ -78,7 +79,7 @@
                 <button type="button" class="font-bold" onclick="getNombre()">Enter</button>
             </div>
             <div class="method-result">
-                <div class="result-vertical result-good">
+                <div id="nombre-correct" class="result-vertical result-good hide">
                     <div class="result-nombre-title">
                         <img class="icon" src="assets/correct.png" alt="correct icon">
                         Estructura nombre ingresado
@@ -96,7 +97,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="result-horizontal result-bad font-bold">
+                <div id="nombre-error" class="result-horizontal result-bad font-bold hide">
                     <img class="icon" src="assets/error.png" alt="error icon">
                     Nombre incompleto o mal ingresado
                 </div>

@@ -106,14 +106,14 @@
 }
 
 .method-field {
-    margin-right: 35px;
+    margin-right: 25px;
 }
 
 .field-rut {
     width: 130px;
 }
 .field-rutdv {
-    width: 80px;
+    width: 65px;
 }
 .field-nombre {
     width: 200px;
@@ -135,7 +135,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
 }
 
@@ -144,7 +144,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
 }
 
