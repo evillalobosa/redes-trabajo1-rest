@@ -6,6 +6,22 @@ function getRut() {
     if (rut.length === 8 && validador.length === 1) {
         console.log("Rut ingresado maomeno");
 
+        // Send request
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/products", true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify({
+            rut: Number(rut),
+            validador: Number(validador)
+        }));
+        xhr.onload = function() {
+            console.log("--------------- recibido?")
+            console.log(this.responseText);
+            var data = JSON.parse(this.responseText);
+            console.log(data);
+            console.log("-----------------")
+        }
+
         // Show correct msg
         var error_result = document.getElementById("rut-error");
         error_result.classList.add("hide");
@@ -25,6 +41,10 @@ function getRut() {
         error_result.classList.remove("hide");
     }
 }
+
+
+// ============================================================== //
+
 
 function getNombre(){
     var nombre = document.getElementById("nombreField").value;
