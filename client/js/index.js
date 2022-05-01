@@ -31,8 +31,12 @@ function getRut() {
         console.log("===> Rut ingresado +-");
 
         // Send request
-        fetch('http://localhost:8080/products', {
+        fetch('/api/rut', {
             method:'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
             body:JSON.stringify({
                 rut: Number(rut),
                 validador:Number(validador)
@@ -55,7 +59,6 @@ function getRut() {
         })
         .catch(function() {
             console.log("error en la peticion del rut")
-
         })
     }
     else {
@@ -100,7 +103,7 @@ function getNombre(){
         console.log("===> Nombre ingresado +-")
 
         // Send request
-        fetch('http://localhost:8080/products', {
+        fetch('/api/nombre', {
             method:'POST',
             body:JSON.stringify({
                 nombres:nombre_completo,
