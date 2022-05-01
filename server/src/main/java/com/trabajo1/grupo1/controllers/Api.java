@@ -2,6 +2,7 @@ package com.trabajo1.grupo1.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +21,7 @@ public class Api {
 	}
 
 	@PostMapping("/nombre")
-	public String nombre(String nombreCompleto) {
-		return "Nombre ingresado";
+	public String nombre(@RequestBody String nombres) {
+		return nombres;
 	}
 }

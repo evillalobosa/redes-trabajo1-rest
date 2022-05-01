@@ -38,18 +38,15 @@ function getRut() {
                 'Content-Type': 'application/json'
             },
             body:JSON.stringify({
-                rut: Number(rut),
+                rut:Number(rut),
                 validador:Number(validador)
-            }),
-            headers:{
-                "Content-Type":"application/json; charset=UTF-8"
-            }
+            })
         })
         .then((resp) => resp.json())
         .then(function(data){
-            console.log(data.results)
+            console.log("===> RUT Post Request Return: ",data)
 
-            if (data.results){
+            if (data){
                 showRutResult(true)
             }
             else {
@@ -57,8 +54,8 @@ function getRut() {
             }
 
         })
-        .catch(function() {
-            console.log("error en la peticion del rut")
+        .catch(function(error) {
+            console.log("===> Error en la peticion del RUT: ", error)
         })
     }
     else {
@@ -99,35 +96,35 @@ function getNombre(){
 
     // VALIDATIONS
     // TODO: check if nombre_completo arent numbers
-    if (nombre) {
+    if (nombre_completo) {
         console.log("===> Nombre ingresado +-")
 
         // Send request
         fetch('/api/nombre', {
             method:'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
             body:JSON.stringify({
-                nombres:nombre_completo,
-            }),
-            headers:{
-                "Content-Type":"application/json; charset=UTF-8"
-            }
+                nombres: nombre_completo
+            })
         })
         .then((resp) => resp.json())
         .then(function(data){
-            console.log(data.results)
+            console.log("===> Nombre Post Request Return: ",data)
 
             // var status = data.results[1]
             // var nombres = data.results[2]
             // var apellidos = data.results[3]
 
             // if (status) {}
+            showNombreResult(true)
 
         })
-        .catch(function() {
-            console.log("error en la peticion del nombre")
+        .catch(function(error) {
+            console.log("===> Error en la peticion del Nombre: ", error)
         })
-
-        showNombreResult(true)
     }
     else {
         // TODO: add msg to logs
