@@ -27,7 +27,7 @@ function getRut() {
 
     // VALIDATIONS
     // TODO: check if rut and validators are int numbers and not letters or whatever
-    if (rut.length === 8 && validador.length === 1) {
+    if ((rut.length === 8 || rut.length === 7) && validador.length === 1) {
         console.log("===> Rut ingresado +-");
 
         // Send request
@@ -38,8 +38,7 @@ function getRut() {
                 'Content-Type': 'application/json'
             },
             body:JSON.stringify({
-                rut:Number(rut),
-                validador:Number(validador)
+                rutCompleto:rut+"-"+validador,
             })
         })
         .then((resp) => resp.json())
