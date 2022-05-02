@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.trabajo1.grupo1.services.rut;
-import com.trabajo1.grupo1.services.nombre;
+import com.trabajo1.grupo1.services.Rut;
+import com.trabajo1.grupo1.services.Nombre;
 
 @RestController
 @RequestMapping("/api")
@@ -33,7 +33,7 @@ public class Api {
 		String[] split = rutCompleto.split("-");
 		logger.info("RUT ingresado: "+split[0]+"-"+split[1]);
 
-		rut rutUsuario = new rut();
+		Rut rutUsuario = new Rut();
 		if (rutUsuario.calculateRut(split[0], split[1])) {
 			logger.info("Rut validado correctamente");
 			return true;
@@ -47,7 +47,7 @@ public class Api {
 			consumes = MediaType.APPLICATION_JSON_VALUE,
 			produces = MediaType.APPLICATION_JSON_VALUE
 			)
-	public String nombre(@RequestBody String nombresJson) {
+	public StringBuilder nombre(@RequestBody String nombresJson) {
 		String nombres = nombresJson.replace("{\"nombres\":\"", "");
 		nombres = nombres.replace("\"}", "");
 
@@ -56,12 +56,12 @@ public class Api {
 		logger.info("Nombre completo ingresado: "+nombresJson);
 
 		if (split.length < 3) {
-			// {"nombre0":"ERROR"}
 			logger.warn("Nombre ingresado incompleto");
-			return "{\"nombre0\":\"ERROR\"}";
+			StringBuilder nameError = new StringBuilder();
+			return nameError.append("{\"nombre0\":\"ERROR\"}");
 		}
 
-		nombre nombreUsuario = new nombre();
+		Nombre nombreUsuario = new Nombre();
 		return nombreUsuario.dividirNombre(split);
 	}
 }

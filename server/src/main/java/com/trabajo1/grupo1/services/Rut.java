@@ -1,6 +1,6 @@
 package com.trabajo1.grupo1.services;
 
-public class rut {
+public class Rut {
 
 	public Boolean calculateRut(String rut, String val) {
 		Integer suma = 0;
@@ -34,11 +34,6 @@ public class rut {
 			}
 		}
 
-		if (digito == validador) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return digito.equals(validador);
 	}
 }
