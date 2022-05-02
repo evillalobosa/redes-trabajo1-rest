@@ -1,0 +1,10 @@
+/*Color scheme*/
+:root {
+    --white:	#f4f4f4;
+    --black:	#272727;
+
+    --accent:	#546DE5;
+    --button:	#F7D794;
+    --correct:	#00CEC9;
+    --error:	#FF7675;
+  }

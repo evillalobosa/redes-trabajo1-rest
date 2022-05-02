@@ -1,0 +1,164 @@
+.side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 30vw;
+}
+
+.icon {
+    height: 20px;
+    margin-right: 5px;
+}
+
+.hide {
+    display: none !important;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+
+.description {
+    color: var(--black);
+    background-color: var(--white);
+}
+
+.description-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 25px 0px;
+}
+
+.description-title-main {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.description-title-sub {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    margin: 10px 0px;
+}
+
+.description-text {
+    line-height: 24px;
+}
+
+.description-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    margin: 25px 0px;
+    align-self: stretch;
+}
+
+.description-info-element {
+    font-weight: bold;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.methods {
+    color: var(--white);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 10px;
+}
+
+.method {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.method-title {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.method-description {
+    margin: 30px 0px;
+}
+
+.method-fields {
+    display: flex;
+    justify-content: space-between;
+}
+
+.method-field {
+    margin-right: 25px;
+}
+
+.field-rut {
+    width: 130px;
+}
+.field-rutdv {
+    width: 65px;
+}
+.field-nombre {
+    width: 200px;
+}
+
+
+.result-good {
+    background-color: var(--correct);
+}
+.result-bad {
+    background-color: var(--error);
+}
+
+.method-result {
+    margin-top: 30px;
+}
+
+.result-horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.result-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.result-nombre-title {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.result-nombre {
+    display: flex;
+    flex-direction: row;
+}
+
+.result-nombre-element {
+    margin: 5px 25px;
+}

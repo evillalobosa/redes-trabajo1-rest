@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>API REST</title>
+
+    <link rel="icon" type="image/png" href="assets/favicon.ico"/>
+    <link rel="stylesheet" href="css/index.css">
+    <script defer src="js/index.js"></script>
+</head>
+<body>
+    <!-- DESCRIPTION SECTION -->
+    <div class="side description">
+        <div class="description-title">
+            <div class="description-title-main">Redes Y Comunicación de Datos</div>
+            <div class="description-title-sub">Trabajo 1: API REST</div>
+        </div>
+        <div class="description-text">
+            <ul>
+                <li>Este trabajo 1 consta de dos partes</li>
+                <li>Esta parte consiste en levantar un servidor con el cual se puedan hacer peticiones tipo REST aplicando los dos metodos descritos abajo.</li>
+                <li>El aplicativo cliente hecho simplemente con JS hace peticiones hacia el servidor hecho con Spring Boot</li>
+            </ul>
+        </div>
+        <div class="description-info">
+            <div class="description-info-element">
+                <img class="icon" src="assets/utem.svg" alt="utem icon"> UTEM
+            </div>
+            <div class="description-info-element"> - </div>
+            <div class="description-info-element">Grupo n°1</div>
+            <div class="description-info-element"> - </div>
+            <div class="description-info-element">
+                <img class="icon" src="assets/github.svg" alt="github icon">
+                <a href="https://github.com/yowls/redes-trabajo1-rest">Repositorio</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- METHODS SECTION -->
+    <div class="side methods">
+        <!-- METODO RUT -->
+        <div class="method">
+            <div class="method-title">Validar d&iacutegito verificador</div>
+            <div class="method-description">
+                Este metodo consiste en recibir la parte entera del RUT y su digito verificador<br>
+                por separado para mostrar si este último fue ingresado correctamente o no
+            </div>
+            <div class="method-fields">
+                <div class="method-field" >
+                    <input type="text" id="rutField" class="field-rut" placeholder="RUT">
+                    <input type="text" id="rutdField" class="field-rutdv" placeholder="Validador">
+                </div>
+                <button type="button" class="font-bold" onclick="getRut()">Enter</button>
+            </div>
+            <div class="method-result">
+                <div id="rut-correct" class="result-horizontal result-good font-bold hide">
+                    <img class="icon" src="assets/correct.png" alt="correct icon">
+                    D&iacutegito validador correcto
+                </div>
+                <div id="rut-error" class="result-horizontal result-bad font-bold hide">
+                    <img class="icon" src="assets/error.png" alt="error icon">
+                    D&iacutegito validador incorrecto
+                </div>
+            </div>
+        </div>
+        <!-- METODO DIVIDIR NOMBRE -->
+        <div class="method">
+            <div class="method-title">Dividir nombre</div>
+            <div class="method-description">
+                Este método consiste en recibir un nombre completo (nombres + apellidos) para<br>
+                mostrar estos valores en una estructura jerárquica
+            </div>
+            <div class="method-fields">
+                <input type="text" id="nombreField" class="method-field" placeholder="Nombre completo">
+                <button type="button" class="font-bold" onclick="getNombre()">Enter</button>
+            </div>
+            <div class="method-result">
+                <div id="nombre-correct" class="result-vertical result-good hide">
+                    <div class="result-nombre-title">
+                        <img class="icon" src="assets/correct.png" alt="correct icon">
+                        Estructura nombre ingresado
+                    </div>
+                    <div class="result-nombre">
+                        <div class="result-nombre-element">
+                            Nombres <br>
+                            <div id="nombres"></div>
+                        </div>
+                        <div class="result-nombre-element">
+                            Apellidos <br>
+                            <div id="apellido0"></div>
+                            <div id="apellido1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="nombre-error" class="result-horizontal result-bad font-bold hide">
+                    <img class="icon" src="assets/error.png" alt="error icon">
+                    Nombre incompleto o mal ingresado
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
