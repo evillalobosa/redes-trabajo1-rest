@@ -1,5 +1,7 @@
 package com.trabajo1.grupo1.controllers;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 public class Api {
+
+	private static final Log logger = LogFactory.getLog(Api.class);
 
 	@GetMapping("/demo")
 	public String demo() {
@@ -31,6 +35,8 @@ public class Api {
 		Integer digito = 0;
 		Integer largo = split[0].length();
 
+		logger.info("RUT ingresado: "+split[0]+"-"+split[1]);
+
 		for (int i = largo; i > 0; i--){
             suma = suma + Integer.parseInt(split[0].substring(i-1,i))*constante;
             constante = constante + 1 ;
@@ -50,16 +56,19 @@ public class Api {
 			validador = 10;
 		}
 		else {
-			if (split[1].getClass().getName() == "java.lang.String") {
+			try {
+				validador = Integer.parseInt(split[1]);
+			} catch(Exception e){
 				return false;
 			}
-			validador = Integer.parseInt(split[1]);
 		}
 
 		if (digito == validador) {
+			logger.info("Rut validado correctamente");
 			return true;
 		}
 		else {
+			logger.warn("Rut ingresado invalido");
 			return false;
 		}
 	}
@@ -74,20 +83,27 @@ public class Api {
 		nombres = nombres.replace("\"}", "");
 
 		String[] split = nombres.split(" ");
+		
+		logger.info("Nombre completo ingresado: "+nombresJson);
 
-		if (split.length < 4) {
+		if (split.length < 3) {
 			// {"nombre0":"ERROR"}
+			logger.warn("Nombre ingresado incompleto");
 			return "{\"nombre0\":\"ERROR\"}";
 		}
 
 		String newNombresJson = "{";
 
-        for (int i=0; i<split.length; i++)
+        for (int i=0; i<split.length-2; i++)
             // {"nombre_i":"value_i", "nombre_i":"value_i", ..}
             newNombresJson = newNombresJson + "\"nombre"+i+"\":\""+split[i]+"\",";
 
-        newNombresJson = newNombresJson.replaceFirst(".$","");
-        newNombresJson = newNombresJson + "}";
+        String apellido0 = split[split.length-2];
+        String apellido1 = split[split.length-1];
+
+        newNombresJson = newNombresJson + "\"apellido0\":\""+apellido0+"\",";
+        newNombresJson = newNombresJson + "\"apellido1\":\""+apellido1+"\"}";
+
 		return newNombresJson;
 	}
 }

@@ -59,7 +59,7 @@ function getRut() {
     }
     else {
         // TODO: add msg to logs
-        console.log("===> Rut mal ingresado");
+        console.log("===> RUT mal ingresado");
 
         showRutResult(false)
     }
@@ -111,15 +111,35 @@ function getNombre(){
         })
         .then((resp) => resp.json())
         .then(function(data){
-            console.log("===> Nombre Post Request Return: ",data)
+            console.log("===> Nombre Post Request Return: ",data);
 
-            // var status = data.results[1]
-            // var nombres = data.results[2]
-            // var apellidos = data.results[3]
+            if (data.nombre0 === "ERROR"){
+	            showNombreResult(false);
+	        }
+	        else {
+                var i = 0;
+                var concatNombresHTML = "";
 
-            // if (status) {}
-            showNombreResult(true)
+                for (var key in data) {
+                    if (key == "nombre"+i){
+                        if(data[key] != ""){
+                            concatNombresHTML = concatNombresHTML + "+ "+data[key]+"<br>";
+                        }
+                    }
+                    i++;
+                }
 
+                var nombresHtml = document.getElementById("nombres");
+                nombresHtml.innerHTML = concatNombresHTML;
+
+                var apellido0 = document.getElementById("apellido0");
+                apellido0.innerHTML = "+ "+data.apellido0;
+
+                var apellido1 = document.getElementById("apellido1");
+                apellido1.innerHTML = "+ "+data.apellido1;
+
+                showNombreResult(true)
+            }
         })
         .catch(function(error) {
             console.log("===> Error en la peticion del Nombre: ", error)
